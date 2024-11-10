@@ -16,6 +16,11 @@ const io = new Server(server, {
 
 const userManager = new UserManager();
 
+app.get('/', (req, res) => {
+    res.send('<h1>Hello world</h1>');
+});
+
+
 io.on('connection', (socket) => {
   console.log('a user connected');
   userManager.addUser("randomName", socket);
